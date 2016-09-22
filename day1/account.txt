@@ -1,3 +1,0 @@
-admin:123
-niko:456
-tom:lxw
