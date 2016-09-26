@@ -22,7 +22,7 @@ def highlight_print(text):
     print('\033[32;1m ' + text + '\033[0m')
 # 登陆
 def login(username,password):
-    with open("/Users/lixiwei-mac/Documents/IdeaProjects/PythonStudy/day4/bank_card.txt") as f:
+    with open("/Users/lixiwei-mac/Documents/IdeaProjects/PythonStudy/oldboy/day4/bank_card.txt") as f:
         for line in f.readlines():
             id,name,pwd,money = line.split()[0],line.split()[2],line.split()[1],line.split()[3]
             if name == username and password == pwd:
@@ -52,7 +52,7 @@ def get_money():
     if (release_money < -15000):
         highlight_print("对不起,您无法透支超过15000元")
     else:
-        with open("/Users/lixiwei-mac/Documents/IdeaProjects/PythonStudy/day4/bank_card.txt","r+") as f:
+        with open("/Users/lixiwei-mac/Documents/IdeaProjects/PythonStudy/oldboy/day4/bank_card.txt","r+") as f:
             line = f.readline()
             while line:
                 if line.split()[0] == id:
@@ -70,20 +70,20 @@ def get_money():
 
 # 添加交易记录
 def add_log(id,name,action,money):
-    with open("/Users/lixiwei-mac/Documents/IdeaProjects/PythonStudy/day4/logs.txt","a+") as f:
+    with open("/Users/lixiwei-mac/Documents/IdeaProjects/PythonStudy/oldboy/day4/logs.txt","a+") as f:
         f.write(id + ' '  + name + ' '  + action + ' '  + money + '\n')
 
 # 查询余额与交易明细
 def show_details(id):
     result = []
     # 搜集交易详单
-    with open("/Users/lixiwei-mac/Documents/IdeaProjects/PythonStudy/day4/logs.txt","r") as f:
+    with open("/Users/lixiwei-mac/Documents/IdeaProjects/PythonStudy/oldboy/day4/logs.txt","r") as f:
         for line in f.readlines():
             if line.split()[0] == id:
                result.append(line)
     money = 0
     # 查询余额
-    with open("/Users/lixiwei-mac/Documents/IdeaProjects/PythonStudy/day4/bank_card.txt","r+") as f:
+    with open("/Users/lixiwei-mac/Documents/IdeaProjects/PythonStudy/oldboy/day4/bank_card.txt","r+") as f:
         for line in f.readlines():
             if line.split()[0] == id:
                 money = line.split()[3]
@@ -95,7 +95,7 @@ def show_details(id):
 # 还款
 def repay():
     money = int(input("请输入您要存款/还款的金额:"))
-    with open("/Users/lixiwei-mac/Documents/IdeaProjects/PythonStudy/day4/bank_card.txt","r+") as f:
+    with open("/Users/lixiwei-mac/Documents/IdeaProjects/PythonStudy/oldboy/day4/bank_card.txt","r+") as f:
         line = f.readline()
         while line:
             if line.split()[0] == id:
@@ -113,7 +113,7 @@ def repay():
             line = f.readline()
 # 转账
 def send_money(id_from,id_to,money):
-    with open("/Users/lixiwei-mac/Documents/IdeaProjects/PythonStudy/day4/bank_card.txt","r+") as f:
+    with open("/Users/lixiwei-mac/Documents/IdeaProjects/PythonStudy/oldboy/day4/bank_card.txt","r+") as f:
         line = f.readline()
         while line:
             if line.split()[0] == id_to:

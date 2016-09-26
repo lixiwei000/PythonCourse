@@ -19,9 +19,10 @@ def my_xreadlines(file_path):
         # seek = f.tell()
         if data:
             yield data
+            print("Hey")
         else:
             return
 import time
-for line in my_xreadlines("/Users/lixiwei-mac/Documents/IdeaProjects/PythonStudy/day2/hadoop.txt"):
+for line in my_xreadlines("/Users/lixiwei-mac/Documents/IdeaProjects/PythonStudy/oldboy/day2/hadoop.txt"):
     print(line.strip())
     time.sleep(1)
