@@ -53,7 +53,7 @@ Person.help()
 niko = Person("Niko","北京")
 niko.introduce()
 niko._Person__heart()
-
+ 
 print(niko.Location)
 niko.Location = "上海"
 print(niko.Location)
