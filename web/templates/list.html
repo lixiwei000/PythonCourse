@@ -1,0 +1,23 @@
+{% extends "master/layout.html" %}
+{% load tag%}
+
+{% block content %}
+    <table border="1">
+        <thead>
+        <tr>编号</tr>
+        <tr>姓名</tr>
+        </thead>
+        <tbody>
+        {% for u in user %}
+            <tr>
+                <td>{{ u.id }}</td>
+                <td>{% mySimpleTag u.id %}</td>
+                <td>{{ u.name }}</td>
+                <td>{{ u.remark }}</td>
+                <td>{{ u.createTime | date:'Y-m-d H:i:s'}}</td>
+                <td>{{ u.updateTime | date:'Y-m-d H:i:s'}}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

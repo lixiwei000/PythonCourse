@@ -1,0 +1,16 @@
+0.django-admin createproject projectname
+1.python manage.py runserver  0.0.0.0:8000
+2.python manage.py startapp appname
+
+# ORM
+1.修改settings,配置数据库
+2.在model中创建类
+3.python manage.py makemigrations
+4.python manage.py migrate
+5.If u want to modify model&db,then do 3,4 again after modified.
+PS:
+    Maybe some errors occured while doing 3.
+    Because python3 don't have the moudle MySQLdb.
+    http://unun.in/python/216.html
+
+

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>麻烦叫我中路杀神呵呵呵呵&nbsp;&nbsp;&nbsp;</title>
+    <script src="jquery-3.1.1.js" type="application/javascript"/>
+</head>
+<style>
+    .black{
+        color : black;
+    }
+    .gray{
+        color : gray;
+    }
+</style>
+<script type="text/javascript">
+//    var tag = document.createElement("a")
+//    tag.innerText = "HelloJS"
+//    tag.href = "http://www.baidu.com"
+//    var d1 = document.getElementById("abc")
+//    d1.appendChild(tag)
+//
+    function leave(){
+        var search = document.getElementById("search")
+        search.value = ""
+        search.setAttribute("class","black")
+    }
+    function add(){
+        var process = document.getElementById("process")
+        var currProcess = parseInt(process.style.width.replace("%",""))
+        if (currProcess < 100)
+            process.style.width = currProcess + 10  + '%'
+        else
+            clearInterval(interval)
+    }
+    function titleRun(){
+        var title = document.title
+        console.log(title)
+        title = title + title.charAt(0)
+        title = title.substring(1)
+        document.title = title
+    }
+    interval = setInterval(add,1000)
+    titleInterval = setTimeout(add,5000)
+//    var d1 = document.getElementById("d1")
+//    var str = "123"
+//    d1.innerText = str
+//    console.log(d1.innerText)
+
+//    (function foo()
+//    {
+//        var name = "NikoBelic"
+//        var list = [1,2,3,4]
+//        list.push(5)
+//        console.log(list)
+//        list.unshift(0)
+//        console.log(list)
+//        list.splice(1,0,'niko')
+//        console.log(list)
+//
+//
+//
+//    })()
+
+</script>
+<body>
+    <!--<input id="search" type="text" class="gray" value="请输入关键字" onfocus="leave()"/>-->
+    <div style="background-color: dimgray; width: 100px;">
+        <div id="process" style="background-color: greenyellow; width: 10%; height: 10px"></div>
+    </div>
+</body>
+</html>

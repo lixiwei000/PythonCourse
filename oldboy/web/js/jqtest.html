@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JQuery学习</title>
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <style type="text/css">
+        .c1{
+            border:solid;
+            border-color: red;
+        }
+        .c2{
+            border:solid;
+            border-color: blue;
+        }
+        .returntop{
+            position: fixed;
+            width:80px;
+            height:60px;
+            right:20px;
+            bottom:20px;
+            background-color: red;
+            color:white;
+        }
+        .hide{
+            display: none;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div id="d1" >HelloWorld</div>
+
+<div>
+    <input name="username" value="nikobelic"/>
+</div>
+
+<div id="topButton" class="returntop hide">返回顶部</div>
+<hr/>
+
+<label class="c1">aaaa</label>
+<label class="c1">bbbb</label>
+<label class="c1">cccc</label>
+<div style="height: 30px;">asdasdasdas</div>
+
+<p>I want to say that:</p>
+<p>Hello Mr.</p>
+<input id="addButton1" type="button" value="追加1"/>
+<input id="addButton2" type="button" value="追加2"/>
+<script type="text/javascript">
+//    $("#d1").text("asdasdas")
+//    var username = $("input[name='username']")
+//    username.val("Niko")
+//    console.log(username.attr("name"))
+//    username.attr("name","name")
+//    console.log(username.attr("name"))
+//
+$(function(){
+    $("#topButton").click(function(){
+        var height = $(window).scrollTop()
+        while(height > 0){
+            height -= 1
+            $(window).scrollTop(height)
+        }
+    });
+    $("#addButton1,#addButton2").click(function(){
+        var currBtn = $(this).attr("id")
+        if (currBtn == "addButton1"){
+            $("p").append("Fuck You")
+        }
+        else if (currBtn == "addButton2") {
+            $("p").append("Eat shit!")
+        }
+    });
+})
+
+$(".c1").attr("class","c2")
+$(window).scroll(function(){
+    var height = $(window).scrollTop()
+    if (height > 0)
+    {
+        $("#topButton").removeClass("hide")
+    }
+    else
+    {
+        $("#topButton").addClass("hide")
+    }
+})
+
+</script>
+</body>
+</html>

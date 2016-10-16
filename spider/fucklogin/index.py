@@ -51,6 +51,7 @@ def checkStatus():
     try:
         response = opener.open(request)
         result = response.read().decode('gbk')
+        print(result)
         bs = BeautifulSoup(result,"lxml")
         res = bs.findAll("input")[0]["value"]
         return "已经登录"
@@ -60,8 +61,10 @@ def checkStatus():
 
 if __name__ == "__main__":
     print('\033[32mNCUT登陆系统\033')
-    sno = input("学号:")
-    pwd = input("密码:")
+    # sno = input("学号:")
+    # pwd = input("密码:")
+    sno = "2015309040116"
+    pwd = "080015"
     while True:
         if "已经登录" == checkStatus():
             print("已经登陆",time.strftime("%Y-%m-%d %H:%M:%S"))
