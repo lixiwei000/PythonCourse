@@ -24,5 +24,6 @@ urlpatterns = [
     url(r'^advertise/', include('advertise.url')),
     url(r'^myapp/', include('myapp.url')),
     url(r'^monitor/', include('monitor.url')),
+    url(r'^shop/', include('shop.url')),
 
 ]
