@@ -4,9 +4,9 @@ from django import forms
 
 class UserInfo(models.Model):
 
-    username = models.CharField(max_length=50)
+    username = models.CharField(max_length=50,error_messages={'required':'用户名不能为空','invalid':'用户名非法'})
 
-    password = models.CharField(max_length=100)
+    password = models.CharField(max_length=100,error_messages={'required':"密码不能为空"})
 
     gender = models.IntegerField(default=1)
 
@@ -16,14 +16,17 @@ class UserInfo(models.Model):
 
     userType = models.ForeignKey('UserType')
 
-    userGroup = models.ManyToManyField('UserGroup')
+
 
 class UserType(models.Model):
 
     typeNme = models.CharField(max_length=20,default='')
+
 class UserGroup(models.Model):
 
     groupName = models.CharField(max_length=20)
+
+    userInfo = models.ManyToManyField('UserInfo')
 
 class Args(models.Model):
 

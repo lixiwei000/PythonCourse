@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script type="text/javascript">
+        function doPost(){
+            var username = $("#username").val()
+            $.ajax({
+                url:"/monitor/ajax/",
+                type:"POST",
+                data:username,
+                success:function(data){
+                    var jsonObj = $.parseJSON(data)
+                    console.log(jsonObj.status)
+                    console.log(jsonObj.msg)
+                    console.log(jsonObj.data)
+                    $("#username").val (jsonObj.msg)
+{#                    console.log(data)#}
+{#                    console.log("成功")#}
+                },
+                error:function(data){
+                    console.log(data)
+                    console.log('失败')
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    <input type="text" name="username" id="username" />
+    <input type="button" onclick="doPost();" value="点我触发ajax请求"/>
+
+
+
+
+</body>
+
+</html>

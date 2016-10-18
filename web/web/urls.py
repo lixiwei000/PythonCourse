@@ -23,5 +23,6 @@ urlpatterns = [
     # url映射 ------- 文件
     url(r'^advertise/', include('advertise.url')),
     url(r'^myapp/', include('myapp.url')),
+    url(r'^monitor/', include('monitor.url')),
 
 ]

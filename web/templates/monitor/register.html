@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+</head>
+<body>
+<h1>旧版注册</h1>
+<form action="/monitor/register/" method="POST">
+    用户名<input name="username"><br/>
+    密码<input name="password"><br/>
+    用户类型
+    <select name="userType">
+        {% for type in typeList %}
+            <option value="{{ type.id }}">{{ type.typeName }}</option>
+        {% endfor %}
+    </select>
+    <br/>
+    用户群组
+    <select name="userGroup">
+        {% for group in groupList %}
+            <option  value="{{ group.id }}">{{ group.groupName }}</option>
+        {% endfor %}
+    </select>
+    <br/>
+    <input type="submit" value="注册">
+    <br/>
+<hr/>
+    <h1>Form版注册</h1>
+
+<hr/>
+
+<table border="1">
+    <thead>
+    <td>用户名</td>
+    <td>密码</td>
+    <td>类型</td>
+    <td>组名</td>
+    </thead>
+    <tbody>
+        {% for user in userList %}
+            <tr>
+                <td>{{ user.username }}</td>
+                <td>{{ user.password }}</td>
+                <td>{{ user.userType.typeName }}</td>
+                <td>
+                    {% for group in user.userGroup.all %}
+                        {{ group.groupName}}
+                    {% endfor %}
+
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</form>
+
+<hr/>
+
+
+</body>
+</html>

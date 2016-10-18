@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>主页面</title>
+</head>
+<body>
+<form action="/monitor/formRegister/" method="POST">
+    userName:{{ data.userName }}
+    <br/>
+    password:{{ data.password }}
+    <br/>
+    email:{{ data.email }}
+    <br/>
+    ip:{{ data.ip }}
+    <br/>
+    <input type="submit" value="注册"/>
+    <br/>
+</form>
+<span style="color: red;">
+    {{ firstErrorMsg }}
+</span>
+</body>
+</html>
