@@ -18,7 +18,7 @@ from django.contrib import admin
 urlpatterns = [
     # url映射 ------ 函数
     # url(r'^index/', index),
-    # url(r'^admin/', admin.site.urls),
+    url(r'^admin/', admin.site.urls),
     # url(r'^list/(?P<name>\S*)/(?P<id>\d*)', list,{'id':"000"})
     # url映射 ------- 文件
     url(r'^advertise/', include('advertise.url')),
