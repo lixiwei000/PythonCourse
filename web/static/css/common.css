@@ -1,0 +1,17 @@
+body{
+    margin:0;
+}
+.pg-header{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    height: 44px;
+    background-color: #2459a2;
+    color: red;
+
+}
+.header-menu{
+    float: left;
+}

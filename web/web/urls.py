@@ -15,15 +15,17 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+
 urlpatterns = [
     # url映射 ------ 函数
     # url(r'^index/', index),
     url(r'^admin/', admin.site.urls),
     # url(r'^list/(?P<name>\S*)/(?P<id>\d*)', list,{'id':"000"})
     # url映射 ------- 文件
-    url(r'^advertise/', include('advertise.url')),
-    url(r'^myapp/', include('myapp.url')),
-    url(r'^monitor/', include('monitor.url')),
-    url(r'^shop/', include('shop.url')),
+    # url(r'^advertise/', include('advertise.url')),
+    # url(r'^myapp/', include('myapp.url')),
+    # url(r'^monitor/', include('monitor.url')),
+    # url(r'^shop/', include('shop.url')),
+    url(r'^bbs/', include('bbs.url')),
 
 ]

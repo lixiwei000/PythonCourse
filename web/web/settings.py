@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+from django.conf.global_settings import STATICFILES_FINDERS
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
@@ -37,8 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'myapp',
-    'monitor',
+    # 'myapp',
+    # 'monitor',
+    'bbs',
 ]
 
 MIDDLEWARE = [
@@ -49,8 +52,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'monitor.middleware.myMiddleware.MyMiddleWare1',
-    'monitor.middleware.myMiddleware.MyMiddleWare2',
+    # 'monitor.middleware.myMiddleware.MyMiddleWare1', # 自定义中间件 类似于管道 AOP
+    # 'monitor.middleware.myMiddleware.MyMiddleWare2',
 ]
 
 ROOT_URLCONF = 'web.urls'
@@ -124,12 +127,17 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
-
-
-STATIC_URL = '/static/'
+#
+SITE_ROOT = os.path.join(os.path.abspath(os.path.dirname(__file__)),'..')
+STATIC_URL = '/static/'# 注意这里!如果是/static/ 最后拼接的静态文件地址  就是错的!
+STATIC_ROOT = os.path.join(SITE_ROOT,'static')
 STATICFILES_DIRS = (
-    # Put strings here, like "/home/html/static" or "C:/www/django/static".
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
-    os.path.join(BASE_DIR, STATIC_URL),
+    # os.path.join(BASE_DIR,STATIC_URL),
+    ('css',os.path.join(STATIC_ROOT,'css').replace('\\','/') ),
+    ('js',os.path.join(STATIC_ROOT,'js').replace('\\','/') ),
+    ('images',os.path.join(STATIC_ROOT,'images').replace('\\','/') ),
+    ('upload',os.path.join(STATIC_ROOT,'upload').replace('\\','/') ),
 )
+print(STATICFILES_DIRS)
+# print(STATICFILES_DIRS)
+
