@@ -6,18 +6,20 @@
     <meta charset="utf-8">
     <title>BBS社区</title>
 </head>
-<link rel="stylesheet" href="{% static 'bbs/../../static/' %}" >
-{#<link rel="stylesheet" href="/static/css/common.css" >#}
-{#<link rel="stylesheet" href="../static/css/common.css" >#}
-{#<link rel="stylesheet" href="common.css" >#}
-{#<link rel="stylesheet" href="css/common.css" >#}
+<link rel="stylesheet" href="{% static 'css/common.css' %}" >
 <body>
     <div class="pg-header">
-        <div class="header-menu"></div>
+        <div class="header-menu">
+            <img src="/static/images/logo.png" href="/bbs/index/" class="digg-logo"></img>
+            <a href="/bbs/index/" class="tb active">全部</a>
+            <a href="/bbs/index/" class="tb">TabA</a>
+            <a href="/bbs/index/" class="tb">TabB</a>
+            <a href="/bbs/index/" class="tb">TabC</a>
+        </div>
         <div class="header-search"></div>
     </div>
     <div class="pg-body"></div>
     <div class="pg-bottom"></div>
-    <img src="{% static 'bbs/../../static/images/test.png' %}">
+{#    <img src="{% static 'images/test.png' %}">#}
 </body>
 </html>

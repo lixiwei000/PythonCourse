@@ -83,6 +83,8 @@ WSGI_APPLICATION = 'web.wsgi.application'
 
 DATABASES = {
     'default': {
+        # 'HOST' :'10.5.150.163',
+        # 'PORT':'3306',
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'python',
         'USER': 'root',
@@ -129,7 +131,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 #
 SITE_ROOT = os.path.join(os.path.abspath(os.path.dirname(__file__)),'..')
-STATIC_URL = '/static/'# 注意这里!如果是/static/ 最后拼接的静态文件地址  就是错的!
+STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(SITE_ROOT,'static')
 STATICFILES_DIRS = (
     # os.path.join(BASE_DIR,STATIC_URL),
