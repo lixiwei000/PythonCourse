@@ -38,6 +38,6 @@ def threadTest():
 
 
 if __name__ == "__main__":
-    # threadTest()
-    myThread = MyThread(target=foo,args=(1,))
-    myThread.start()
+    threadTest()
+    # myThread = MyThread(target=foo,args=(1,))
+    # myThread.start()
