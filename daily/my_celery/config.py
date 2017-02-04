@@ -1,5 +1,6 @@
 #!/usr/bin/env python
-# -*- coding: utf-8 -*-from __future__ import absolute_import          #如果没有这一行，下一行可能会出错
+# -*- coding: utf-8 -*-
+# from __future__ import absolute_import          #如果没有这一行，下一行可能会出错
 from celery.schedules import crontab
 from datetime import timedelta
 BROKER_URL = 'redis://localhost:6379/5'
