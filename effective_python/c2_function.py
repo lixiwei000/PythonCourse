@@ -90,9 +90,8 @@ def test(a,b):
     return 1
 
 def do_calc_flow_rate():
-    # print flow_rate(10, 5)
-    # print flow_rate(10, 5)
-    print test(a=1,2)
+    print flow_rate(10, 5)
+    print flow_rate(10, 5)
 
 
 if __name__ == '__main__':
