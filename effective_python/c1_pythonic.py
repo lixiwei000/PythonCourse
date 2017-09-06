@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 
 # Tip1: Check Your Python Version Before Starting Work
-from flask import json
 
 
 def py_version():
@@ -122,6 +121,7 @@ def for_else():
             break
     else:
         print 'for never break.'
+
 
 # Tip13: Try Except Else Finally
 def try_excep_else_finally():

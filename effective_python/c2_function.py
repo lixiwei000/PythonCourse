@@ -79,6 +79,7 @@ class ReadVisits:
 def do_nomalize():
     numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
     visits = ReadVisits(numbers)
+    print normalize(numbers)
     print iter(visits) is iter(visits)
 
 
@@ -95,4 +96,4 @@ def do_calc_flow_rate():
 
 
 if __name__ == '__main__':
-    do_calc_flow_rate()
+    do_nomalize()
